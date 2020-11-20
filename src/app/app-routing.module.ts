@@ -1,3 +1,4 @@
+import { AgregarusuarioComponent } from './pages/usuario/agregarusuario/agregarusuario.component';
 import { Not404Component } from './pages/not404/not404.component';
 import { Error500Component } from './pages/error500/error500.component';
 import { PedidoSolicitudComponent } from './pages/pedido-solicitud/pedido-solicitud.component';
@@ -16,6 +17,7 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {path: '', component: InicioComponent},
   {path: 'usuarios', component: UsuarioComponent},
+  {path: 'agregarUsuario', component: AgregarusuarioComponent},
   {path: 'pqr', component: PqrComponent},
   {path: 'productos', component: ProductoComponent},
   {path: 'notificaciones', component: NotificacionComponent},
