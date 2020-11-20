@@ -1,0 +1,53 @@
+@font-face{
+    font-family: tipografiaPrimaria;
+    src: url(resources/Lato-Heavy.ttf);
+    color: white;
+}
+@font-face{
+    font-family: tipografiaSecundaria;
+    src: url(resources/Lato-Bold.ttf);
+    color: white;
+}
+.example-container {
+    font-family: tipografiaPrimaria;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  .example-sidenav-container {    
+    flex: 1;
+    font-family: tipografiaPrimaria;
+  }
+  
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .example-app-name{
+    font-family: tipografiaPrimaria;
+    color: white;
+    text-align: center;
+  }
+
+  .mat-toolbar{
+    background: #02611a;
+    color: #fff;
+  }
+
+  .centrado{text-align:center; font-size: xx-large; border:1px; padding:550px;}
+
+  .logo{        
+    font-size: 18px;
+    margin:  2em;
+    text-align: center;
+    width: 250px;
+    height: 76px;
+    background-image: url(resources/Logo.png);
+    overflow:hidden;
+}
+

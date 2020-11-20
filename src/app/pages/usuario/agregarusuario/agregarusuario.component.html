@@ -1,0 +1,56 @@
+
+<form [formGroup]= "form" #frmUsuario="ngForm" (ngSubmit)="guardar()">
+
+    <mat-form-field>
+        <input matInput placeholder="Cedula"  formControlName="cedula" maxlength="15">
+        <mat-error *ngIf= "cedula.invalid && cedula.errors.required">Documento es requerido</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input matInput placeholder="Nombre" formControlName="nombre" maxlength="20">
+        <mat-error *ngIf= "nombre.invalid && nombre.errors.required">Nombre es requerido</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input matInput placeholder="Apellido" formControlName="apellido" maxlength="20">
+        <mat-error *ngIf= "apellido.invalid && apellido.errors.required">Apellido es requerido</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input matInput placeholder="Nick" formControlName="nick" maxlength="10">
+        <mat-error *ngIf= "nick.invalid && nick.errors.required">Nickname es requerido</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input matInput placeholder="Contraseña" type="password" formControlName="contrasena" maxlength="200">
+        <mat-error *ngIf= "contrasena.invalid && contrasena.errors.required">Clave es requerido</mat-error>
+
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input matInput placeholder="Celular" type="number" formControlName="celular">
+        <mat-error *ngIf= "celular.invalid && celular.errors.required">Celular es requerido</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input matInput placeholder="Direccion" formControlName="direccion" maxlength="100">
+        <mat-error *ngIf= "direccion.invalid && direccion.errors.required">Direccion es requerido</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input matInput placeholder="Correo" formControlName="correo" maxlength="60">
+        <mat-error *ngIf= "correo.invalid && correo.errors.required">Correo es requerido</mat-error>
+    </mat-form-field>
+    <br>
+<br>
+
+
+    <button mat-raised-button color="primary" type="submit" [disabled]= "frmUsuario.invalid">
+        <mat-icon>done</mat-icon>
+        <span>Guardar</span>
+    </button>
+    <button mat-raised-button color="warn" type="button" routerLink="/usuarios">
+        <mat-icon>close</mat-icon>
+        <span>Cancelar</span>
+    </button>
+</form>

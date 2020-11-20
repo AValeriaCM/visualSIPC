@@ -1,0 +1,65 @@
+<mat-form-field>
+    <mat-label>Categorias</mat-label>
+    <mat-select [(value)]="nombre" (selectionChange)="idCat($event.value)" >
+        <mat-option [value]="categoria.nombre" *ngFor="let categoria of dataSource">{{ categoria.nombre }}</mat-option>
+    </mat-select>
+</mat-form-field>
+
+<p>SELECCIONE UNA CATEGORIA PARA VER SUS PRODUCTOS</p>
+
+    <table mat-table [dataSource]="dataSourceProductos" matSort class="mat-elevation-z8">
+
+        <ng-container matColumnDef="codigo">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Codigo </mat-header-cell>
+            <mat-cell *matCellDef="let productos"> {{productos.codigo}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="nombre">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </mat-header-cell>
+            <mat-cell *matCellDef="let productos"> {{productos.nombre}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="descripcion">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Descripcion </mat-header-cell>
+            <mat-cell *matCellDef="let productos"> {{productos.descripcion}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="precioMayorista">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Precio x Mayor </mat-header-cell>
+            <mat-cell *matCellDef="let productos"> {{productos.precioMayorista}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="precioUnitario">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Precio Unitario </mat-header-cell>
+            <mat-cell *matCellDef="let productos"> {{productos.precioUnitario}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="acciones">
+            <mat-header-cell *matHeaderCellDef>Acciones</mat-header-cell>
+            <mat-cell *matCellDef="let productos">
+                <button mat-button color="primary" [routerLink]="['/productos/editar/', productos.idProducto]">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-button color="accent">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </table>
+
+    <!-- <mat-paginator [pageSize]="pageSize" [pageSizeOptions]="[2, 5, 10, 25, 100]" [length]="cantidad"
+        (page)="cambiarPagina($event)"></mat-paginator> -->
+
+    <div class="example-label"></div>
+    <div class="example-button-row">
+        <button mat-fab color="primary" style="float: right" routerLink="agregar">
+            <mat-icon>plus_one</mat-icon>
+        </button>
+    </div>
+
+
+
+<router-outlet></router-outlet>

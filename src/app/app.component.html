@@ -1,0 +1,71 @@
+<button mat-raised-button>Primary</button>
+
+
+<div class="example-container">
+  <mat-toolbar class="example-toolbar">
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
+      <mat-icon *ngIf="sidenav.opened">close</mat-icon>
+    </button>
+
+    <h1 class="centrado">SIPC</h1>
+
+    <span class="example-spacer"></span>
+    <button mat-icon-button>
+      <mat-icon>notifications_active</mat-icon>
+    </button>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink="/login">
+        <mat-icon>account_box</mat-icon>
+        <span>Login</span>
+      </button>
+      <button mat-menu-item (click)="sidenav.opened = false">
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Cerrar Sesión</span>
+      </button>
+    </mat-menu>
+
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-sidenav-container">
+    <mat-sidenav #sidenav style="width: 250px">
+
+      <img class="logo" style="margin-left: 0px; margin-top: 0px;" />
+      <button mat-menu-item (click)="sidenav.toggle()" style="cursor: pointer" routerLink="/">
+        <mat-icon>home</mat-icon>
+        <span>Inicio</span>
+      </button>
+      <mat-divider></mat-divider>
+      <button mat-menu-item (click)="sidenav.toggle()" style="cursor: pointer" routerLink="/fincas">
+        <mat-icon>terrain</mat-icon>
+        <span>Fincas</span>
+      </button>
+      <mat-divider></mat-divider>
+      <button mat-menu-item (click)="sidenav.toggle()" style="cursor: pointer" routerLink="/productos">
+        <mat-icon>shopping_cart</mat-icon>
+        <span>Productos</span>
+      </button>
+      <mat-divider></mat-divider>
+      <button mat-menu-item (click)="sidenav.toggle()" style="cursor: pointer" routerLink="/usuarios">
+        <mat-icon>person</mat-icon>
+        <span>Usuarios</span>
+      </button>
+      <mat-divider></mat-divider>
+      <mat-divider></mat-divider>
+      <button mat-menu-item (click)="sidenav.toggle()" style="cursor: pointer" routerLink="/empresas">
+        <mat-icon>store</mat-icon>
+        <span>Empresas</span>
+      </button>
+
+
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+</div>
