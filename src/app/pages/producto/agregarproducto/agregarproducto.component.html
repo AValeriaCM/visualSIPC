@@ -1,1 +1,39 @@
-<p>agregarproducto works!</p>
+<form [formGroup]= "form" #frmProducto="ngForm" (ngSubmit)="guardar()" class="normal-form">
+    <h1>Agregar Producto</h1>
+    <mat-form-field>
+        <input matInput placeholder="Nombre" formControlName="nombre" maxlength="20">
+        <mat-error *ngIf= "nombre.invalid && nombre.errors.required">Nombre es requerido</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input matInput placeholder="Descripcion" formControlName="descripcion" maxlength="20">
+        <mat-error *ngIf= "descripcion.invalid && descripcion.errors.required">descripcion es requerido</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input matInput placeholder="Foto" formControlName="foto" maxlength="10">
+        <mat-error *ngIf= "foto.invalid && foto.errors.required">foto es requerido</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input matInput placeholder="Precio x Und" type="number" formControlName="precioUnitario">
+        <mat-error *ngIf= "precioUnitario.invalid && precioUnitario.errors.required">Precio es requerido</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input matInput placeholder="Precio x Mayor" formControlName="precioMayorista">
+        <mat-error *ngIf= "precioMayorista.invalid && precioMayorista.errors.required">Precio es requerido</mat-error>
+    </mat-form-field>
+
+<br>
+<div class="button-row">
+    <button mat-raised-button color="primary" type="submit" [disabled]= "frmProducto.invalid">
+        <mat-icon>done</mat-icon>
+        <span>Guardar</span>
+    </button>
+    <button mat-raised-button color="warn" type="button" routerLink="/productos">
+        <mat-icon>close</mat-icon>
+        <span>Cancelar</span>
+    </button>
+</div>
+</form>

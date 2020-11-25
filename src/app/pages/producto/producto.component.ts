@@ -1,3 +1,4 @@
+import { ActivatedRoute } from '@angular/router';
 import { CategoriaService } from './../../_service/categoria.service';
 import { Categoria } from './../../_model/Categoria';
 import { ProductoService } from './../../_service/producto.service';
@@ -29,7 +30,8 @@ export class ProductoComponent implements OnInit {
   selectedValue: any;
 
   constructor(private productoService: ProductoService,
-              private categoriaService: CategoriaService) { }
+              private categoriaService: CategoriaService,
+              public route: ActivatedRoute) { }
   idCat(event) {
     this.selectedValue = event.nombre;
     this.productoService.listarPorCategoria(this.nombre.toString()).subscribe(data => {

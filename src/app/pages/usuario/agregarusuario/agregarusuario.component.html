@@ -1,6 +1,5 @@
-<h1>Regístrese</h1>
-<form [formGroup]= "form" #frmUsuario="ngForm" (ngSubmit)="guardar()">
-
+<form [formGroup]= "form" #frmUsuario="ngForm" (ngSubmit)="guardar()" class="normal-form">
+    <h1>Regístrese</h1>
     <mat-form-field>
         <input matInput placeholder="Cedula"  formControlName="cedula" maxlength="15">
         <mat-error *ngIf= "cedula.invalid && cedula.errors.required">Documento es requerido</mat-error>
@@ -55,7 +54,7 @@
     <br>
 <br>
 
-
+<div class="button-row">
     <button mat-raised-button color="primary" type="submit" [disabled]= "frmUsuario.invalid">
         <mat-icon>done</mat-icon>
         <span>Guardar</span>
@@ -64,4 +63,5 @@
         <mat-icon>close</mat-icon>
         <span>Cancelar</span>
     </button>
+</div>
 </form>

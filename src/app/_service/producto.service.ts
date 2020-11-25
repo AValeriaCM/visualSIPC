@@ -1,3 +1,4 @@
+import { Subject } from 'rxjs';
 import { Producto } from './../_model/Producto';
 import { HttpClient } from '@angular/common/http';
 import { environment } from './../../environments/environment';
@@ -9,6 +10,7 @@ import { Injectable } from '@angular/core';
 export class ProductoService {
 
   url = `${environment.HOST}/productos`;
+  mensajeCambio = new Subject<string>();
 
   constructor(private http: HttpClient) { }
 
