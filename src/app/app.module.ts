@@ -23,6 +23,7 @@ import { AgregarfincaComponent } from './pages/finca/agregarfinca/agregarfinca.c
 import { AgregarusuarioComponent } from './pages/usuario/agregarusuario/agregarusuario.component';
 import { AgregarproductoComponent } from './pages/producto/agregarproducto/agregarproducto.component';
 import { AgregarempresaComponent } from './pages/empresa/agregarempresa/agregarempresa.component';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { AgregarempresaComponent } from './pages/empresa/agregarempresa/agregare
     AgregarfincaComponent,
     AgregarusuarioComponent,
     AgregarproductoComponent,
-    AgregarempresaComponent
+    AgregarempresaComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +52,8 @@ import { AgregarempresaComponent } from './pages/empresa/agregarempresa/agregare
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    MatCarouselModule.forRoot()
+    MatCarouselModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

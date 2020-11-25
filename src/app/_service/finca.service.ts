@@ -1,3 +1,4 @@
+import { Subject } from 'rxjs';
 import { Finca } from './../_model/Finca';
 import { HttpClient } from '@angular/common/http';
 import { environment } from './../../environments/environment';
@@ -9,6 +10,7 @@ import { Injectable } from '@angular/core';
 export class FincaService {
 
   url = `${environment.HOST}/fincas`;
+  mensajeCambio = new Subject<string>();
 
   constructor(private http: HttpClient) { }
 

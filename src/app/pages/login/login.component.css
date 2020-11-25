@@ -1,8 +1,8 @@
-form.normal-form{
+.normal-form{
     width: 400px;
-    height: 500px;
+    height: auto;
     background: #000000;
-    padding: 20px;
+    padding: 10px;
     margin: auto;
     margin-top: 30px;
     border-radius: 6px;
@@ -28,5 +28,5 @@ h3{
 }
 
 .button-row button{
-    margin-left: 60px;
+    margin-left: 130px;
 }

@@ -1,4 +1,4 @@
-
+<div [hidden]="route.children.length !== 0">
     <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
 
         <ng-container matColumnDef="foto">
@@ -42,16 +42,16 @@
         <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
     </table>
 
-    <mat-paginator [pageSize]="pageSize" [pageSizeOptions]="[2, 5, 10, 25, 100]" [length]="cantidad"
+    <mat-paginator class="paginator" [pageSize]="pageSize" [pageSizeOptions]="[2, 5, 10, 25, 100]" [length]="cantidad"
         (page)="cambiarPagina($event)"></mat-paginator>
 
     <div class="example-label"></div>
     <div class="example-button-row">
-        <button mat-fab color="primary" style="float: right" routerLink="agregar">
+        <button mat-fab color="primary" style="float: right; margin-right: 50px;" routerLink="agregar">
             <mat-icon>plus_one</mat-icon>
         </button>
     </div>
 
-
+</div>
 
 <router-outlet></router-outlet>

@@ -1,1 +1,44 @@
-<p>agregarfinca works!</p>
+<form [formGroup]= "form" #frmFinca="ngForm" (ngSubmit)="guardar()" class="normal-form">
+    <h3>Registrese</h3>
+    <mat-form-field>
+        <input matInput placeholder="Nombre Finca"  formControlName="nombre" maxlength="60">
+        <mat-error *ngIf= "nombre.invalid && nombre.errors.required">Nombre es requerido</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input matInput placeholder="Direccion" formControlName="direccion" maxlength="100">
+        <mat-error *ngIf= "direccion.invalid && direccion.errors.required">Direccion es requerido</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input matInput placeholder="Telefono" type="number" formControlName="telefono">
+        <mat-error *ngIf= "telefono.invalid && telefono.errors.required">Telefono es requerido</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input matInput placeholder="Celular" type="number" formControlName="celular">
+        <mat-error *ngIf= "celular.invalid && celular.errors.required">Celular es requerido</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input matInput placeholder="Correo" formControlName="correo" maxlength="60">
+        <mat-error *ngIf= "correo.invalid && correo.errors.required">Correo es requerido</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input matInput placeholder="Foto" formControlName="foto" maxlength="60">
+        <mat-error *ngIf= "foto.invalid && foto.errors.required">Foto es requerido</mat-error>
+    </mat-form-field>
+    <br>
+<br>
+<div class="button-row">
+    <button mat-raised-button color="primary" type="submit" [disabled]= "frmFinca.invalid">
+        <mat-icon>done</mat-icon>
+        <span>Guardar</span>
+    </button>
+    <button mat-raised-button color="warn" type="button" routerLink="/fincas">
+        <mat-icon>close</mat-icon>
+        <span>Cancelar</span>
+    </button>
+</div>
+</form>

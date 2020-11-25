@@ -1,8 +1,21 @@
 table {
-    width: 100%;
+  margin-top: 50px;
+    width: 80%;
+    margin-left: 150px;
 }
 
 .mat-form-field {
+  margin-top: 50px;
   font-size: 14px;
-  width: 100%;
+  width: 80%;
+  margin-left: 150px;
+}
+
+p{
+  text-align: center;
+}
+
+.paginator{
+  width: 80%;
+  margin-left: 150px;
 }

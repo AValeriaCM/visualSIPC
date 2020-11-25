@@ -1,0 +1,41 @@
+<form #frmAddVeh='ngForm' [formGroup]="form">
+    <mat-card class="normal-form">
+        <mat-card-header fxLayoutAling="center center">
+                <h3>Login</h3>
+        </mat-card-header>
+
+        <table class="full-width">
+            <tr>
+
+                <td>
+                    <mat-form-field>
+                        <mat-label>Usuario</mat-label>
+                        <input matInput required formControlName="usuario" placeholder="Usuario">
+                        <mat-error *ngIf="usuario.invalid && usuario.errors.required">El usuario es requerido
+                        </mat-error>
+                    </mat-form-field>
+                </td>
+            </tr>
+        </table>
+
+
+        <table class="full-width">
+            <tr>
+
+                <td>
+                    <mat-form-field>
+                        <mat-label>Contraseña</mat-label>
+                        <input matInput [type]="hide ? 'password' : 'text'" formControlName="contrasenia" placeholder="************">
+                        <mat-error *ngIf="contrasenia.invalid && contrasenia.errors.required">La contraseña es requerida</mat-error>
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                            [attr.aria-pressed]="hide">
+                        </button>
+                    </mat-form-field>
+                </td>
+            </tr>
+        </table>
+        <div class="button-row">
+            <button mat-raised-button color="primary" (click)="login()">Iniciar Sesión</button>
+        </div>
+    </mat-card>
+</form>

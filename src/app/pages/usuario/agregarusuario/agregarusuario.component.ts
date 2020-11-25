@@ -43,15 +43,15 @@ export class AgregarusuarioComponent implements OnInit {
 
   inicializarFormularioVacio(){
     this.form = new FormGroup({
-      'cedula': new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(12)]),
-      'nombre': new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]),
-      'apellido': new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]),
+      'cedula': new FormControl('', [Validators.required, Validators.maxLength(12)]),
+      'nombre': new FormControl('', [Validators.required, Validators.maxLength(20)]),
+      'apellido': new FormControl('', [Validators.required, Validators.maxLength(20)]),
       'nick': new FormControl('', [Validators.required]),
       'contrasena': new FormControl('', [Validators.required]),
       'direccion': new FormControl('', [Validators.required]),
       'celular': new FormControl('', [Validators.required, Validators.maxLength(10)]),
       'correo': new FormControl('', [Validators.required, Validators.email]),
-      'fechaNacimiento': new FormControl('', [Validators.required]),
+      'fechaNacimiento': new FormControl('', [Validators.required, Validators.pattern("^\\d{4}([\\-/.])(0?[1-9]|1[1-2])\\1(3[01]|[12][0-9]|0?[1-9])$")]),
       'foto': new FormControl('', [Validators.required])
     });
   }
@@ -130,8 +130,8 @@ export class AgregarusuarioComponent implements OnInit {
   get celular() {
     return this.form.get('celular');
   }
-  get fechaNac() {
-    return this.form.get('fechaNac');
+  get fechaNacimiento() {
+    return this.form.get('fechaNacimiento');
   }
   get foto() {
     return this.form.get('foto');
