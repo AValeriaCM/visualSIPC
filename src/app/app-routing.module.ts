@@ -1,3 +1,4 @@
+import { AgregarempresaComponent } from './pages/empresa/agregarempresa/agregarempresa.component';
 import { AgregarproductoComponent } from './pages/producto/agregarproducto/agregarproducto.component';
 import { LoginComponent } from './pages/login/login.component';
 import { AgregarfincaComponent } from './pages/finca/agregarfinca/agregarfinca.component';
@@ -28,7 +29,9 @@ const routes: Routes = [
     {path: 'agregar', component: AgregarproductoComponent}
   ]},
   {path: 'notificaciones', component: NotificacionComponent},
-  {path: 'empresas', component: EmpresaComponent},
+  {path: 'empresas', component: EmpresaComponent, children: [
+    {path: 'agregar', component: AgregarempresaComponent}
+  ]},
   {path: 'fincas', component: FincaComponent, children:[
     {path: 'agregar', component: AgregarfincaComponent}
   ]},

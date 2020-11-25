@@ -1,4 +1,4 @@
-
+<div [hidden]="route.children.length !== 0">
     <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
 
         <ng-container matColumnDef="foto">
@@ -52,6 +52,6 @@
         </button>
     </div>
 
-
+</div>
 
 <router-outlet></router-outlet>
