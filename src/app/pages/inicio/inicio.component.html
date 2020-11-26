@@ -4,3 +4,36 @@
     <mat-carousel-slide #matCarouselSlide *ngFor="let slide of slides; let i = index" [image]="slide.image"
         overlayColor="#00000040" [hideOverlay]="false"></mat-carousel-slide>
 </mat-carousel>
+
+<div>
+
+    <mat-card class="example-card">
+        <mat-card-title><b>¿Qué es SIPC?</b></mat-card-title>
+        <mat-card-content style="text-align: justify; font-size: 18px; line-height: 2;">
+            <br>
+            <p>Es una plataforma que permite conectar a los productores del campo con tenderos
+                y consumidores de todo el departamento sin intermediarios.
+                <br>
+                <br>
+                Funciona como un directorio municipal donde vinculamos a todos los productores,
+                Tiendas y consumidores en el cual entre todos construyen una red para potencializar
+                las economías locales beneficiando a miles de personas en Cundinamarca, reduciendo
+                costos de intermediarios y garantizando ingresos mas altos para los productores campesinos.</p>
+        </mat-card-content>
+    </mat-card>
+</div>
+<div>
+    <button mat-fab class="boton-inicio" style="background-color: #02611a;">
+        <mat-icon style="color: white;">eco</mat-icon>
+    </button>
+</div>
+<mat-card-footer>
+    <!--<mat-toolbar color='secondary'>-->
+    <span class='spacer'></span>
+    <h2 style="text-align: center;">© Universidad de Cundinamarca 2020.</h2>
+    <a>Contactenos</a>
+
+
+    <span class='spacer'></span>
+    <!--</mat-toolbar>-->
+</mat-card-footer>
