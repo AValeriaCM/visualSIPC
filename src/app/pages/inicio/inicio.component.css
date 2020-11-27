@@ -24,10 +24,22 @@
 }
 
 .example-card {
+   
     max-width: 600px;
     margin-left: 80px;
     margin-top: 80px;
     background: transparent;
     border: none;
     box-shadow: none;
+  }
+
+  .example-card2{
+    display: inline-block;
+    vertical-align:top;
+      max-width: 400px;
+      margin-top: 80px;
+      margin-right: 80px;
+      background: transparent;
+      border: none;
+      box-shadow: none;
   }

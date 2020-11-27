@@ -11,9 +11,12 @@
     <h1 class="centrado">SIPC</h1>
 
     <span class="example-spacer"></span>
-    <button mat-icon-button>
-      <mat-icon>notifications_active</mat-icon>
+    <button mat-icon-button [matMenuTriggerFor]="card">
+      <mat-icon matBadge="5" matBadgeColor="warn">notifications_active</mat-icon>
     </button>
+    <mat-menu #card="matMenu" onclick="hide">
+      <span style="margin: 10px; color: white;">    ¡Tienes una notificacion nueva!</span>
+    </mat-menu>
     <button mat-icon-button [matMenuTriggerFor]="menu">
       <mat-icon>more_vert</mat-icon>
     </button>

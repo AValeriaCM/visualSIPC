@@ -17,12 +17,14 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatCardModule } from '@angular/material/card';
+import {MatBadgeModule} from '@angular/material/badge';
 
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
+    MatBadgeModule,
     MatButtonModule,
     MatToolbarModule,
     MatIconModule,
@@ -40,6 +42,7 @@ import { MatCardModule } from '@angular/material/card';
     MatCardModule,
     MatCarouselModule.forRoot()  ],
   exports: [
+    MatBadgeModule,
     MatButtonModule,
     MatToolbarModule,
     MatIconModule,
